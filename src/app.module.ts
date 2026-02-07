@@ -47,8 +47,7 @@ import { EvaluationModule } from './modules/evaluations/evaluation.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         connection: {
-          host: config.get<string>('REDIS_HOST') || 'localhost',
-          port: config.get<number>('REDIS_PORT') || 6379,
+          url: config.get<string>('REDIS_URL'),
         },
       }),
     }),
